@@ -9,6 +9,8 @@ public class firing : MonoBehaviour
 
     public float BulletSpeed = 10f;
 
+   
+
     // Update is called once per frame
     void Update()
     {
@@ -16,6 +18,9 @@ public class firing : MonoBehaviour
         {
             Fire();
         }
+
+        
+
     }
     void Fire()
     {
@@ -23,4 +28,8 @@ public class firing : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(BulletPoint.up * BulletSpeed, ForceMode2D.Impulse);
     }
+
+
+
+
 }
