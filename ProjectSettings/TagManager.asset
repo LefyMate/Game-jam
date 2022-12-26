@@ -16,8 +16,8 @@ TagManager:
   - Player
   - Collision
   - Bullet
-  - 
-  - 
+  - Player Collision
+  - Bullet Collision
   - 
   - 
   - 
