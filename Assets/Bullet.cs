@@ -21,11 +21,14 @@ public class Bullet : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public float LifeTime = 5f;
+
     Vector3 velocity;
 
     private void Awake()
     {
         rb=GetComponent<Rigidbody2D>();
+        Destroy(gameObject,LifeTime);
     }
 
 
@@ -54,6 +57,19 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
+        if(collision.collider.CompareTag("Player"))
+        {
+            Debug.Log("Player hit!");
+            DestroyBullet();
+        }
+        if (collision.collider.CompareTag("Finish"))
+        {
+            Debug.Log("Level Complete!");
+            DestroyBullet();
+        }
+
+
         var speed = velocity.magnitude;
         var direction = Vector3.Reflect(velocity.normalized, collision.contacts[0].normal);
 
@@ -61,4 +77,9 @@ public class Bullet : MonoBehaviour
     }
 
 
+
+    void DestroyBullet()
+    {
+        Destroy(gameObject);
+    }
 }
