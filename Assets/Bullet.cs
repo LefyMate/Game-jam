@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Bullet : MonoBehaviour
 {
@@ -17,13 +18,21 @@ public class Bullet : MonoBehaviour
         CollisionMask |= (1 << layer);
     }
     */
-
+    public Transform Player;
 
     private Rigidbody2D rb;
 
     public float LifeTime = 5f;
 
+    public int nextScene;
+
     Vector3 velocity;
+
+    private void Start()
+    {
+        nextScene=SceneManager.GetActiveScene().buildIndex+1;
+    }
+
 
     private void Awake()
     {
@@ -62,11 +71,19 @@ public class Bullet : MonoBehaviour
         {
             Debug.Log("Player hit!");
             DestroyBullet();
+            LevelManager.instance.GameOver();
+            collision.collider.gameObject.SetActive(false);
         }
         if (collision.collider.CompareTag("Finish"))
         {
             Debug.Log("Level Complete!");
             DestroyBullet();
+            LevelManager.instance.GameWin();
+            Player.gameObject.SetActive(false);
+            if (nextScene > PlayerPrefs.GetInt("levelAt"))
+            {
+                PlayerPrefs.SetInt("levelAt", nextScene);
+            }
         }
 
 

@@ -19,7 +19,10 @@ public class Complete : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player")||collision.collider.CompareTag("Bullet"))
         {
-            Invoke("NextLevel",2f);
+            //Invoke("NextLevel",2f);
+
+
+
         }
     }
 
