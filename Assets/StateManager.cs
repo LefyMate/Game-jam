@@ -7,6 +7,7 @@ public class StateManager : MonoBehaviour
 {
     public void ReloadCurrentScene()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -14,12 +15,14 @@ public class StateManager : MonoBehaviour
     {
         if (name != null)
         {
+            Time.timeScale = 1f;
             SceneManager.LoadScene(name);
         }
     }
 
     public void LoadNextLevel()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

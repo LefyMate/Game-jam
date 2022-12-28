@@ -9,7 +9,19 @@ public class MenuManager : MonoBehaviour
     {
         if (name != null)
         {
-            SceneManager.LoadScene(name);   
+            SceneManager.LoadScene(name);
+        }
+    }
+
+    public void ExitGame()
+    {
+        if (UnityEditor.EditorApplication.isPlaying)
+        {
+            UnityEditor.EditorApplication.isPlaying=false;
+        }
+        else
+        {
+            Application.Quit();
         }
     }
 }

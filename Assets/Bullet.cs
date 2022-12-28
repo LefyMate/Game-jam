@@ -18,11 +18,11 @@ public class Bullet : MonoBehaviour
         CollisionMask |= (1 << layer);
     }
     */
-    public Transform Player;
+    //public Transform Player;
 
     private Rigidbody2D rb;
 
-    public float LifeTime = 5f;
+    public int LifeTime = 5;
 
     public int nextScene;
 
@@ -79,7 +79,8 @@ public class Bullet : MonoBehaviour
             Debug.Log("Level Complete!");
             DestroyBullet();
             LevelManager.instance.GameWin();
-            Player.gameObject.SetActive(false);
+            Time.timeScale = 0f;
+            //Player.gameObject.SetActive(false);
             if (nextScene > PlayerPrefs.GetInt("levelAt"))
             {
                 PlayerPrefs.SetInt("levelAt", nextScene);
