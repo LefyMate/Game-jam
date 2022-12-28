@@ -10,6 +10,8 @@ public class LevelSelection : MonoBehaviour
     private int FirstLevelSceneIndex = 2;
 
     // Start is called before the first frame update
+    //Original creator of code part: https://www.youtube.com/@VinnyGameDev
+    //code start
     void Start()
     {
         int levelAt = PlayerPrefs.GetInt("levelAt", FirstLevelSceneIndex); /* < Change this int value to whatever your
@@ -22,6 +24,8 @@ public class LevelSelection : MonoBehaviour
                 lvlButtons[i].interactable = false;
         }
     }
+    //code end
+
 
     //resets progress and locks levels aside from level 1
     public void ClearProgress()
