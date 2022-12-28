@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+
+    
     public void ChangeSceneByName(string name)
     {
         if (name != null)
@@ -15,13 +17,9 @@ public class MenuManager : MonoBehaviour
 
     public void ExitGame()
     {
-        if (UnityEditor.EditorApplication.isPlaying)
-        {
-            UnityEditor.EditorApplication.isPlaying=false;
-        }
-        else
-        {
-            Application.Quit();
-        }
+        Application.Quit();
     }
+
+    
+
 }

@@ -8,13 +8,13 @@ public class CameraZoom : MonoBehaviour
     [SerializeField] private float ScrollSpeed = 10.0f;
 
     private Camera cam;
-    // Start is called before the first frame update
+
     void Start()
     {
         cam=Camera.main;
     }
 
-    // Update is called once per frame
+    //allows for zooming in and out
     void Update()
     {
         

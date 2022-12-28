@@ -21,6 +21,7 @@ public class LevelSelection : MonoBehaviour
         }
     }
 
+    //resets progress and locks levels aside from level 1
     public void ClearProgress()
     {
         PlayerPrefs.SetInt("levelAt", 2);

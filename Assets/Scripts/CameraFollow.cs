@@ -7,7 +7,7 @@ public class CameraFollow : MonoBehaviour
 
     public Transform Player;
 
-    // Update is called once per frame
+    //Camera is fixed on player and follows him around
     void FixedUpdate()
     {
         transform.position = new Vector3(Player.position.x, Player.position.y, transform.position.z);

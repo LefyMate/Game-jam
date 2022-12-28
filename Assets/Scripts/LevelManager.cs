@@ -36,15 +36,11 @@ public class LevelManager : MonoBehaviour
         death = !death;
         if (deathPanel.activeSelf)
         {
-            //Player.gameObject.SetActive(false);
             Time.timeScale = 0f;
-
         }
         else
         {
-            //Player.gameObject.SetActive(true);
             Time.timeScale = 1f;
-
         }
     }
 
@@ -55,15 +51,11 @@ public class LevelManager : MonoBehaviour
         win = !win;
         if (winPanel.activeSelf)
         {
-            //Player.gameObject.SetActive(false);
             Time.timeScale = 0f;
-
         }
         else
         {
-            //Player.gameObject.SetActive(true);
             Time.timeScale = 1f;
-
         }
     }
 
@@ -76,15 +68,12 @@ public class LevelManager : MonoBehaviour
             {
                 Player.gameObject.SetActive(false);
                 Time.timeScale = 0f;
-            
             }
             else
             {
                 Player.gameObject.SetActive(true);
                 Time.timeScale = 1f;
-            
             }
         }
-        
     }
 }

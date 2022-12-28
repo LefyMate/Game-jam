@@ -22,11 +22,13 @@ public class firing : MonoBehaviour
         
 
     }
+    //Create bullet instance and give it speed in the direction the player is facing
     void Fire()
     {
         GameObject bullet = Instantiate(bulletPref,BulletPoint.position,BulletPoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(BulletPoint.up * BulletSpeed, ForceMode2D.Impulse);
+        SFXManager.SFXInstance.Audio.PlayOneShot(SFXManager.SFXInstance.Shot);
     }
 
 
